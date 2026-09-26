@@ -1,0 +1,20 @@
+# Local only: personal study notes and reference material. Never committed.
+notes/
+
+# Raw per-test results (the reports built from them are committed)
+reports/results.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+.venv/
+.pytest_cache/
+
+# Secrets and local config
+.env
+.env.*
+
+# OS
+.DS_Store

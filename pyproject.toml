@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tracebench"
+version = "1.0.0"
+description = "A worked verification and validation (V&V) case study: requirements, tests at every V-model level, known-truth validation and a traceability matrix."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.setuptools]
+packages = ["tracebench", "tracebench.models"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
