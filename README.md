@@ -37,15 +37,16 @@ tracebench: PASS  (reports in reports/)
 
 ## What the process found
 
-Every model first passed checks against its own formulas. Validation then found four things: three defects,
-each a requirement the code, the design or the model failed to meet, and the measured limits of the model's assumptions.
+Every model first passed checks against its own formulas. Validation then found four defects: one in the code,
+one in a design threshold, one in the model on real data, and one in the model's assumptions, which stays open with a
+documented mitigation.
 
 | Finding | Type | How it was found | Outcome |
 |:--|:--|:--|:--|
 | **TB-1** The tail model returned the tail shape with the wrong sign; every heavy tail read as bounded. | Defect: code | Parameter recovery on samples with a known shape: bias grew with the true value and never shrank with more data. | Fixed; regression tests keep it fixed |
 | **KI-1** The strengthening signal labelled 19 to 27% of *unchanged* levels as strengthening. | Defect: design (fails S-5) | Operating characteristic on simulated levels with a known break rate | Threshold 0.75 → 0.95 (CR-1), cost in power reported |
 | **KI-2** On real data the touch model overpredicted by 5.2 points (ECE 0.052 against a 0.03 requirement). | Defect: model on real data (fails R-4) | Field validation, then a split by time of day | Intraday volatility seasonality; fixed by CR-2, chosen by a held out A/B test |
-| Measured limits: +4 points on coarse bars, +3 points under clustered volatility | Limits (not defects) | Calibration with each assumption broken on purpose | Documented; flagged at run time |
+| Measured limits: +4 points on coarse bars, +3 points under clustered volatility | Defect: model assumptions (open, mitigated) | Calibration with each assumption broken on purpose | Documented; flagged at run time |
 
 Details: [issue register](docs/05-issue-register.md) · [validation report](reports/VALIDATION_REPORT.md) · [field validation](docs/07-field-validation.md)
 

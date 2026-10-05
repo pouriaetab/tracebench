@@ -55,7 +55,7 @@ change request (CR-1, CR-2) resolved it on evidence.
   tests it is 0.81 (S-6). Small samples now more often read "holding",
   which is the honest answer when the evidence is thin.
 
-## Documented limits (not defects)
+## Open defect: documented limits
 
 1. **Discrete monitoring (model R).** Coarse bars make the model overpredict
    touches by about 4 points. Mitigation: prefer finer bars, or apply a
