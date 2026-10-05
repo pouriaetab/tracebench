@@ -22,6 +22,10 @@ and what was done, so nothing is fixed silently and nothing known is hidden.
 
 ## Known issues
 
+KI-1 and KI-2 are defects: each is a written requirement that the design (KI-1) or the model on real
+data (KI-2) failed to meet. They are recorded as known issues because each stayed open under its ID until a
+change request (CR-1, CR-2) resolved it on evidence.
+
 ### KI-1: inherited strengthening threshold fails the false alarm requirement
 
 - **Requirement:** S-5, at most 10 percent false "strengthening" labels.
